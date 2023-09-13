@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.case {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(45deg, #ffd700, #ffa500, #ffd700);
+  box-shadow: inset 0 0 5px #ff8c00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+}
+.case::before {
+  top: -300px;
+  z-index: -10;
+}
+
+.case::after {
+  bottom: -300px;
+  z-index: -10;
+}
+
+.case::before,
+.case::after {
+  position: absolute;
+  content: "";
+  width: 300px;
+  height: 300px;
+  background: repeating-linear-gradient(90deg, #ffffff, #000000 2px);
+  z-index: -1;
+}
+
+.clock {
+  width: 350px;
+  height: 350px;
+  background: repeating-linear-gradient(45deg, #4a4949, #242323 1px);
+  border-radius: 50%;
+  position: relative;
+  z-index: -1;
+}
+
+h1 {
+  position: absolute;
+  color: #ffffff;
+  font-size: 18px;
+  top: 75px;
+  left: 97px;
+}
+
+.logo {
+  position: absolute;
+  width: 35px;
+  bottom: 95px;
+  left: 160px;
+}
+
+.number {
+  color: #ffffff;
+  font-size: 16px;
+  position: absolute;
+}
+
+.one {
+  right: 95px;
+  top: 35px;
+}
+
+.two {
+  right: 45px;
+  top: 90px;
+}
+
+.three {
+  right: 25px;
+  top: 165px;
+  font-size: 25px;
+}
+
+.four {
+  right: 45px;
+  top: 235px;
+}
+
+.five {
+  right: 95px;
+  top: 290px;
+}
+
+.six {
+  bottom: 15px;
+  right: 165px;
+  font-size: 26px;
+}
+
+.seven {
+  left: 95px;
+  top: 290px;
+}
+
+.eight {
+  left: 45px;
+  top: 235px;
+}
+
+.nine {
+  left: 25px;
+  top: 165px;
+  font-size: 25px;
+}
+
+.ten {
+  left: 45px;
+  top: 90px;
+}
+
+.eleven {
+  left: 95px;
+  top: 35px;
+}
+
+.twelve {
+  top: 15px;
+  left: 165px;
+  font-size: 26px;
+}
+
+.hands {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 160px;
+  left: 160px;
+  z-index: 100;
+}
+
+.hands-seconds {
+  animation: turn 60s linear infinite;
+}
+
+.seconds,
+.hours,
+.minutes {
+  position: absolute;
+  background: #ffffff;
+}
+
+.seconds {
+  height: 2px;
+  width: 100px;
+  top: 13.5px;
+  left: 13.5px;
+}
+
+.hands-minutes {
+  animation: turn 3600s linear infinite;
+}
+
+.minutes {
+  height: 3px;
+  width: 70px;
+  top: 13.5px;
+  left: 13.5px;
+}
+
+.hands-hours {
+  animation: turn 43200s linear infinite;
+}
+
+.hours {
+  height: 3px;
+  width: 50px;
+  top: 13.5px;
+  left: 13.5px;
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
